@@ -1,0 +1,34 @@
+{% extends "base" %}
+{% block extracontent %}
+
+<div class="container">
+    <table class="table table-striped table-hover caption-top table-responsive">
+        <caption>List of selected stocks</caption>
+        <thead>
+          <tr>
+            <th scope="col">Open</th>
+            <th scope="col">High</th>
+            <th scope="col">Low</th>
+            <th scope="col">Close</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Exchange</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for c, k in stocks %}
+          <tr>
+            <td>{{k.open}}</td>
+            <td>{{k.high}}</td>
+            <td>{{k.low}}</td>
+            <td>{{k.close}}</td>
+            <td>{{k.symbol}}</td>
+            <td>{{k.exchange}}</td>
+            <td>{{k.date}}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock extracontent %}
